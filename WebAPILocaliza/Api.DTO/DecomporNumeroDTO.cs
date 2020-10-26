@@ -4,7 +4,7 @@ namespace Api.DTO
 {
     #region Get
     /// <summary>
-    /// Propriedades de Saída DecomporNumero
+    /// Propriedades de Saída da Controller DecomporNumeroController
     /// </summary
     public class DecomporNumeroResponse
     {

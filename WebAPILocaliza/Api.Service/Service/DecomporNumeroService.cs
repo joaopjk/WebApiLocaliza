@@ -30,6 +30,7 @@ namespace Api.Service.Service
         {
             try
             {
+
                 isValid(Request);
 
                 _response = new DecomporNumeroResponse();
@@ -56,6 +57,10 @@ namespace Api.Service.Service
             if (Request == 0)
             {
                 throw new ApiException(StatusCode.BadRequest, MSG.NumeroZero);
+            }
+            if(Request < 0)
+            {
+                throw new ApiException(StatusCode.BadRequest, MSG.NumeroNegativo);
             }
         }
     }

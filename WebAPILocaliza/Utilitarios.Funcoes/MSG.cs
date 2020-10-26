@@ -10,7 +10,9 @@ namespace Utilitarios.Util
     public enum MSG
     {
         [Description("Não existe divisores do número 0.")]
-        NumeroZero = 1
+        NumeroZero = 1,
+        [Description("Não existe decomposição de números negativos.")]
+        NumeroNegativo = 2
     }
 
     public static class MSGD

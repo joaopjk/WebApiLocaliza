@@ -62,7 +62,7 @@ namespace Utilitarios
             return true;
         }
         /// <summary>
-        /// Obter lista de número primos de 2 até o número passada por parâmetro.
+        /// Obter lista de número primos menores que o número passada por parâmetro.
         /// </summary>
         public static List<long> ObterListaNumerosPrimos(long numero)
         {
@@ -94,6 +94,7 @@ namespace Utilitarios
         /// <summary>
         /// Obter a lista de todos os divisores no número passado por parâmentro 
         /// utilizando a lista de números primos obtidos no passo anterior.
+        /// Fatoração por Números Primos
         /// </summary>
         public static List<long> ObterListaDivisores(List<long> listaNumerosPrimos, long numero)
         {

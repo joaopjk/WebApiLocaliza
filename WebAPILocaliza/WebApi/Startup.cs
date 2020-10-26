@@ -40,7 +40,6 @@ namespace WebApi
                 v.ApiVersionReader = new HeaderApiVersionReader("x-api-version");
             }); 
 
-            
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1",

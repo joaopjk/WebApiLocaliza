@@ -51,5 +51,21 @@ namespace XUnitTest_API.Scenarios
             var response = await _testContext.Client.GetAsync("API/v1/DecomporNumero/0");
             response.StatusCode.Should().Be(HttpStatusCode.BadRequest);
         }
+        [Fact]
+        public async Task Values_Get_ReturnsOkResponse_WithResults_Request360()
+        {
+            var response = await _testContext.Client.GetAsync("API/v1/DecomporNumero/360");
+            response.EnsureSuccessStatusCode();
+            var stringResponse = response.Content.ReadAsStringAsync().Result;
+            var retorno = JsonConvert.DeserializeObject<DecomporNumeroResponse>(stringResponse);
+            Assert.Equal(3, retorno.divisoresPrimos.Count);
+            Assert.Equal(24, retorno.divisores.Count);
+        }
+        [Fact]
+        public async Task Values_Get_NegativeNumber_ReturnsBadRequestResponse()
+        {
+            var response = await _testContext.Client.GetAsync("API/v1/DecomporNumero/-1");
+            response.StatusCode.Should().Be(HttpStatusCode.BadRequest);
+        }
     }
 }
