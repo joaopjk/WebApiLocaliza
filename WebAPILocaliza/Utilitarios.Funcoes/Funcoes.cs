@@ -8,70 +8,24 @@ namespace Utilitarios
      /// </summary>
     public class Funcoes
     {
-        public static void DecomporNumero(long numero,List<long> divisores, List<long> divisoresPrimos)
+        public static void DecomporNumero(long numero, List<long> divisores, List<long> divisoresPrimos)
         {
 
-            if (Funcoes.VerificarNumeroPrimo(numero))
-            {
-                divisores.Add(1);
-                divisores.Add(numero);
-                divisoresPrimos.Add(numero);
+            Funcoes.ObterListaNumerosPrimos(numero, divisoresPrimos);
+            List<long> numerosDivisores = Funcoes.FatorarComNumerosPrimos(divisoresPrimos, numero);
+            Funcoes.ObterListaDivisores(numerosDivisores, divisores);
 
-            }
-            else
-            {
-                List<long> numerosPrimos = Funcoes.ObterListaNumerosPrimos(numero);
-                List<long> numerosDivisores = Funcoes.ObterListaDivisores(numerosPrimos, numero);
-                Funcoes.ObterDivisores(numerosDivisores, divisores, divisoresPrimos);
-
-            }
         }
         /// <summary>
         /// Verifiar se o número passado por parâmetro é Primo utilizando o Crivo de Erastóstenes.
         /// </summary>
-        public static bool VerificarNumeroPrimo(long numero)
+        public static void ObterListaNumerosPrimos(long numero, List<long> listaNumerosPrimos)
         {
             double raiz;
             long[] vetor = new long[numero + 1];
-
             raiz = Math.Round(Math.Sqrt(numero), MidpointRounding.AwayFromZero);
 
-            if(numero == 1)
-            {
-                return false;
-            }
-            for (int i = 0; i <= numero; i++)
-            {
-                vetor[i] = i;
-            }
-            for (int j = 2; j <= raiz; j++)
-            {
-                if (vetor[j] == j)
-                {
-                    if (numero % j == 0)
-                    {
-                        return false;
-                    }
-                    for (int k = j + j; k <= numero; k += j)
-                    {
-                        vetor[k] = 0;
-                    }
-                }
-            }
-
-            return true;
-        }
-        /// <summary>
-        /// Obter lista de número primos menores que o número passada por parâmetro.
-        /// </summary>
-        public static List<long> ObterListaNumerosPrimos(long numero)
-        {
-            double raiz;
-            long[] vetor = new long[numero + 1];
-            List<long> listaNumerosPrimos = new List<long>();
-            raiz = Math.Round(Math.Sqrt(numero), MidpointRounding.AwayFromZero);
-
-            for (int i = 0; i <= numero; i++)
+            for (int i = 2; i <= numero; i++)
             {
                 vetor[i] = i;
             }
@@ -89,14 +43,17 @@ namespace Utilitarios
                     }
                 }
             }
-            return listaNumerosPrimos;
+            if(listaNumerosPrimos.Count == 0)
+            {
+                listaNumerosPrimos.Add(numero);
+            }
         }
         /// <summary>
         /// Obter a lista de todos os divisores no número passado por parâmentro 
         /// utilizando a lista de números primos obtidos no passo anterior.
         /// Fatoração por Números Primos
         /// </summary>
-        public static List<long> ObterListaDivisores(List<long> listaNumerosPrimos, long numero)
+        public static List<long> FatorarComNumerosPrimos(List<long> listaNumerosPrimos, long numero)
         {
             bool parar = true;
             List<long> listaDivisores = new List<long>();
@@ -129,9 +86,8 @@ namespace Utilitarios
         /// <summary>
         /// Obter todos os divisores de um número utilizando a lista de numeros decompostos. 
         /// </summary>
-        public static void ObterDivisores(List<long> numerosDivisores,List<long> divisores, List<long> divisoresPrimos)
+        public static void ObterListaDivisores(List<long> numerosDivisores, List<long> divisores)
         {
-
             divisores.Add(1);
             long resultado = 0;
 
@@ -144,17 +100,10 @@ namespace Utilitarios
                     if (!divisores.Contains(resultado))
                     {
                         divisores.Add(resultado);
-                        if (VerificarNumeroPrimo(resultado))
-                        {
-                            if (!divisoresPrimos.Contains(resultado))
-                                divisoresPrimos.Add(resultado);
-                        }
                     }
                 }
             }
-
             divisores.Sort();
-            divisoresPrimos.Sort();
         }
     }
 
