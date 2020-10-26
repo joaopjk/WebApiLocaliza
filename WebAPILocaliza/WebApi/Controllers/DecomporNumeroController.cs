@@ -9,7 +9,7 @@ namespace WebApi.Controllers
     [ApiController]
     public class DecomporNumeroController : ControllerBase
     {
-        private IDecomporNumeroService _service;
+        private readonly IDecomporNumeroService _service;
         public DecomporNumeroController(IDecomporNumeroService Service)
         {
             this._service = Service;

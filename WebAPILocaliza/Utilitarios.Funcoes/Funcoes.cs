@@ -43,7 +43,7 @@ namespace Utilitarios
                     }
                 }
             }
-            if(listaNumerosPrimos.Count == 0)
+            if(listaNumerosPrimos.Count == 0 && numero > 1)
             {
                 listaNumerosPrimos.Add(numero);
             }
