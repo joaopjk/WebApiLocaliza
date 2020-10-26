@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30523.141
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfDecomporNumero", "WpfDecomporNumero\WpfDecomporNumero.csproj", "{FA29F98A-8F33-45F3-A56A-2EBFF7CAD14E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsDecomporNumero", "WindowsFormsDecomporNumero\WindowsFormsDecomporNumero.csproj", "{3202B90F-B383-4856-AF0F-83F487924A9F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{FA29F98A-8F33-45F3-A56A-2EBFF7CAD14E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FA29F98A-8F33-45F3-A56A-2EBFF7CAD14E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FA29F98A-8F33-45F3-A56A-2EBFF7CAD14E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FA29F98A-8F33-45F3-A56A-2EBFF7CAD14E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3202B90F-B383-4856-AF0F-83F487924A9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3202B90F-B383-4856-AF0F-83F487924A9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3202B90F-B383-4856-AF0F-83F487924A9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3202B90F-B383-4856-AF0F-83F487924A9F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {F53C2C06-4900-4630-B883-27A18A57906C}
+		SolutionGuid = {6AB9BF4D-D7FA-49AC-A75A-B2B76BC3833E}
 	EndGlobalSection
 EndGlobal

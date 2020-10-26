@@ -11,7 +11,7 @@ namespace Utilitarios.Util
         public long Code;
         public ApiException() : base()
         { }
-        public ApiException(string Message) : base(Message)
+        public ApiException(string message) : base(message)
         {
             this.StatusCode = StatusCode.InternalServerError;
         }

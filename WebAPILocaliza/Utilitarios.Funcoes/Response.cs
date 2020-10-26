@@ -43,7 +43,7 @@ namespace Utilitarios
         /// </summary>
         /// <param name="result"></param>
         /// <returns></returns>
-        public ActionResult ResponseRetWithoutEnumerable(ApiException result)
+        public ActionResult<T> ResponseRet<T>(ApiException result)
         {
             response.Codigo = result.Code;
             response.Mensagem = result.Message;
@@ -56,8 +56,6 @@ namespace Utilitarios
                     return NotFound(response);
                 case Util.StatusCode.PreconditionRequired:
                     return StatusCode(428, response);
-                case Util.StatusCode.Forbidden:
-                    return StatusCode(403, response);
                 default:
                     return StatusCode(500, response);
             }

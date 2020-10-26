@@ -30,7 +30,6 @@ namespace Api.Service.Service
         {
             try
             {
-
                 isValid(Request);
 
                 _response = new DecomporNumeroResponse();
@@ -41,7 +40,7 @@ namespace Api.Service.Service
             }
             catch (ApiException ex)
             {
-                return _apiResponse.ResponseRetWithoutEnumerable(ex);
+                return _apiResponse.ResponseRet<DecomporNumeroResponse>(ex);
             }
             catch (Exception ex)
             {
